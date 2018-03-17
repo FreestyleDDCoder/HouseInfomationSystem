@@ -1,0 +1,62 @@
+package entity;
+
+/**
+ * Created by liangzhan on 18-3-14.
+ * 这是用户信息表实体
+ */
+public class UserInformation {
+    private String userId;
+    private String userMail;
+    private String userSex;
+    private String userMotto;
+    private String userIconUrl;
+    private String userVip;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserMail() {
+        return userMail;
+    }
+
+    public void setUserMail(String userMail) {
+        this.userMail = userMail;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public String getUserMotto() {
+        return userMotto;
+    }
+
+    public void setUserMotto(String userMotto) {
+        this.userMotto = userMotto;
+    }
+
+    public String getUserIconUrl() {
+        return userIconUrl;
+    }
+
+    public void setUserIconUrl(String userIconUrl) {
+        this.userIconUrl = userIconUrl;
+    }
+
+    public String getUserVip() {
+        return userVip;
+    }
+
+    public void setUserVip(String userVip) {
+        this.userVip = userVip;
+    }
+}
