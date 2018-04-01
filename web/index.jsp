@@ -65,6 +65,7 @@
         <form action="<%=path%>/servlet/LoginCoServlet" method="post"
               class="am-form">
 
+            <%--@declare id="password"--%><%--@declare id="text"--%>
             <label for="text">
                 管理员账号:
             </label>

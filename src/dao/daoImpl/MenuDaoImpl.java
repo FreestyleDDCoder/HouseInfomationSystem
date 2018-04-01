@@ -64,7 +64,7 @@ public class MenuDaoImpl implements MenuDao {
         List<Menu> list = new ArrayList<Menu>();
         try {
             statement = connect.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT rank1 FROM menu WHERE adminPermission=" + " \'" + adminPermission + "\'");
+            ResultSet resultSet = statement.executeQuery("SELECT rank1 FROM menu WHERE adminPermission=" + " \'" + adminPermission + "\'"+"ORDER BY rank1");
             if (resultSet != null) {
                 while (resultSet.next()) {
                     Menu menu = new Menu();

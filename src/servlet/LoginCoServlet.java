@@ -48,6 +48,7 @@ public class LoginCoServlet extends HttpServlet {
                 // 登录成功的操作;接着进行判断账号权限，进入相应的界面
                 String adminPermission = adminLogin1.getAdminPermission();
                 System.out.println("登录成功!");
+                request.getSession().setAttribute("adminId", adminId);
                 request.getSession().setAttribute("adminPermission", adminPermission);
                 //resp.sendRedirect("../LoginedPage.jsp");
                 //登录成功后需要对签到表进行登记（后面有需求则进行添加或者直接在loginCheakImpl中实现）

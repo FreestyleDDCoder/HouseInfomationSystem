@@ -1,4 +1,7 @@
 import core.CoreServer;
+import dao.daoFactory.DaoFactory;
+import dao.daoImpl.UserInformationImpl;
+import entity.UserInformation;
 import esb.ESBServer;
 
 import java.util.concurrent.ExecutorService;
@@ -15,7 +18,6 @@ public class Main {
         executorService.submit(() -> new CoreServer().coreListener());
         executorService.submit(() -> new ESBServer().esbServerListener());
         System.out.println("Success start CoreServer and ESBServer");
-
 
 ////测试menudao
 //        for (Menu m : DaoFactory.getMenuDaoImpl().findRank1Menus("1")) {

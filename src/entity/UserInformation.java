@@ -12,6 +12,18 @@ public class UserInformation {
     private String userIconUrl;
     private String userVip;
 
+    public UserInformation() {
+    }
+
+    public UserInformation(String userId, String userMail, String userSex, String userMotto, String userIconUrl, String userVip) {
+        this.userId = userId;
+        this.userMail = userMail;
+        this.userSex = userSex;
+        this.userMotto = userMotto;
+        this.userIconUrl = userIconUrl;
+        this.userVip = userVip;
+    }
+
     public String getUserId() {
         return userId;
     }

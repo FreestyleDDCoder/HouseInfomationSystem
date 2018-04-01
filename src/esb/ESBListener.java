@@ -27,12 +27,13 @@ public class ESBListener implements Runnable {
             //客户端发来的数据
             String readLine = br.readLine();
             AMQPMessageHandle amqpMessageHandle = new AMQPMessageHandle();
+            //从ESB发往CORE一般不对消息进行id设置
             amqpMessageHandle.sendMessage(readLine, "ESBTOCORE", "", "");
             System.out.println("ESBListener:Success put message to queue \"ESBTOCORE\":" + readLine);
             //取出的信息messageName和messageId定义为userID和对应编号
             JsonTransportType jsonTransportType = (JsonTransportType) new JsonHandle().goParseJsonObject(readLine, JsonTransportType.class);
             String receiveMessage = amqpMessageHandle.receiveMessage("CORETOESB", jsonTransportType.getMessageName(), jsonTransportType.getMessageId());
-            System.out.println("ESBListener:Success get message from queue \"CORETOESB\":" + receiveMessage);
+            System.out.println("ESBListener:Success get message from queue \"CORETOESB\"+MessageId" + jsonTransportType.getMessageId() + ":" + receiveMessage);
             pw.println(receiveMessage);
         } catch (IOException e) {
             e.printStackTrace();

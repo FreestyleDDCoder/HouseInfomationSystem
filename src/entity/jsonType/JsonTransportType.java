@@ -19,12 +19,6 @@ public class JsonTransportType {
         this.serviceName = serviceName;
     }
 
-    public JsonTransportType(Object object, String serviceName) {
-
-        this.object = object;
-        this.serviceName = serviceName;
-    }
-
     public Object getObject() {
         return object;
     }

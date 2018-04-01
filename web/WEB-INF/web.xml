@@ -10,10 +10,95 @@
         <servlet-name>LoginCoServlet</servlet-name>
         <servlet-class>servlet.LoginCoServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>LoginCoServlet</servlet-name>
         <url-pattern>/servlet/LoginCoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>GetStationInformationServlet</servlet-name>
+        <servlet-class>servlet.GetStationInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetStationInformationServlet</servlet-name>
+        <url-pattern>/servlet/GetStationInformationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>PushStationInformationServlet</servlet-name>
+        <servlet-class>servlet.PushStationInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PushStationInformationServlet</servlet-name>
+        <url-pattern>/servlet/PushStationInformationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>UserManageServlet</servlet-name>
+        <servlet-class>servlet.UserManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserManageServlet</servlet-name>
+        <url-pattern>/servlet/UserManageServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>UserManageDeleteServlet</servlet-name>
+        <servlet-class>servlet.UserManageDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserManageDeleteServlet</servlet-name>
+        <url-pattern>/servlet/UserManageDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>HouseKindsDeleteServlet</servlet-name>
+        <servlet-class>servlet.HouseKindsDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HouseKindsDeleteServlet</servlet-name>
+        <url-pattern>/servlet/HouseKindsDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>HouseKindsUpdateServlet</servlet-name>
+        <servlet-class>servlet.HouseKindsUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HouseKindsUpdateServlet</servlet-name>
+        <url-pattern>/servlet/HouseKindsUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>HouseKindsQueryServlet</servlet-name>
+        <servlet-class>servlet.HouseKindsQueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HouseKindsQueryServlet</servlet-name>
+        <url-pattern>/servlet/HouseKindsQueryServlet</url-pattern>
+    </servlet-mapping>
+
+  <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>HouseKindsAddServlet</servlet-name>
+        <servlet-class>servlet.HouseKindsAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HouseKindsAddServlet</servlet-name>
+        <url-pattern>/servlet/HouseKindsAddServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

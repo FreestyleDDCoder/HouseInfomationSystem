@@ -2,6 +2,10 @@
 <%@page import="entity.Menu" %>
 <%@page import="dao.daoImpl.MenuDaoImpl" %>
 <%@ page import="dao.daoFactory.DaoFactory" %>
+<%@ page import="entity.AdminLogin" %>
+<%@ page import="entity.jsonType.JsonTransportType" %>
+<%@ page import="com.alibaba.fastjson.JSON" %>
+<%@ page import="utils.ClientSocketHandle" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -32,7 +36,7 @@
 
     <script type="text/javascript" src="${path}assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="${path}assets/js/loginedpage.js"></script>
-
+    <script type="text/javascript" src="${path}assets/js/myStyle.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -48,17 +52,22 @@
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
         <%
             String adminPermission = (String) request.getSession().getAttribute("adminPermission");
-            MenuDaoImpl menuDaoImpl = DaoFactory.getMenuDaoImpl();
-            List<Menu> rank1list = menuDaoImpl.findRank1Menus(adminPermission);
+            AdminLogin adminLogin = new AdminLogin();
+            adminLogin.setAdminPermission(adminPermission);
+            String jsonString = JSON.toJSONString(new JsonTransportType(adminLogin, "", "", "menuList"));
+            String result = new ClientSocketHandle().sendMessage(jsonString);
+            JsonTransportType jsonTransportTypes = JSON.parseObject(result, JsonTransportType.class);
+            List<Menu> rank1list = JSON.parseArray(jsonTransportTypes.getObject().toString(), Menu.class);
             List rank1 = new ArrayList();
             List rank2 = new ArrayList();
             String temp = "";
+            MenuDaoImpl menuDaoImpl = DaoFactory.getMenuDaoImpl();
             for (Menu menu1 : rank1list) {
                 String r1 = menu1.getRank1();
                 if (!r1.equals(temp)) {
                     rank1.add(r1);
-                    temp = r1;
                     rank2.add(menuDaoImpl.finR2andUrl(r1));
+                    temp = r1;
                 }
             }
             session.setAttribute("rank1", rank1);
@@ -104,7 +113,9 @@
         <div class="am-offcanvas-bar admin-offcanvas-bar">
             <ul class="am-list admin-sidebar-list">
                 <li>
-                    <a href="#"><span class="am-icon-home"></span> 首页</a>
+                    <a href="javascript:void(0)"
+                       onclick="createXMLHttp('<%=path %>/includePage/FristPage.jsp','<%=path %>','')"><span
+                            class="am-icon-home"></span> 首页</a>
                 </li>
                 <c:forEach var="r1" items="${sessionScope.rank1}"
                            varStatus="status1">
@@ -155,7 +166,7 @@
             <hr>
 
             <div id="includePage">
-
+                <jsp:include page="includePage/FristPage.jsp"/>
             </div>
 
         </div>
